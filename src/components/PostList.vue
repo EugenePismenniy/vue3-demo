@@ -3,6 +3,7 @@
 
     <transition-group name="post-list">
       <post-item v-for="post in posts"
+                 :show-buttons="true"
                  :post="post"
                  :key="post.id"
                  @remove="$emit('remove', post)" />
