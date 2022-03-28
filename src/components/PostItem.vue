@@ -4,6 +4,7 @@
       <div>{{ post.id }}</div>
       <div><strong>Название:</strong> {{ post.title }}</div>
       <div><strong>Описание:</strong> {{ post.body }}</div>
+      <post-likes :post-id="post.id"/>
     </div>
     <div class="post_btns" v-if="showButtons">
       <my-button @click="$router.push(`/posts/${post.id}`)">Открыть</my-button>
@@ -14,7 +15,9 @@
 
 <script>
 
+import PostLikes from "@/components/PostLikes";
 export default {
+  components: {PostLikes},
   props: {
     post: {
       type: Object,
